@@ -37,11 +37,12 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-search.js"></script>
-        <script src="data/Comunidades_1.js"></script>
+        <script src="data/AEIS_1.js"></script>
+        <script src="data/Comunidades_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-22.90304565573105,-43.19564640922602],[-22.901180430322686,-43.19272698212436]]);
+        }).fitBounds([[-22.843463171973667,-43.385061152216544],[-22.780385124428776,-43.286397675297245]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -135,17 +136,121 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        function pop_Comunidades_1(feature, layer) {
+        function pop_AEIS_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">id</th>\
-                        <td>' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['objectid'] !== null ? autolinker.link(String(feature.properties['objectid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['cod'] !== null ? autolinker.link(String(feature.properties['cod']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['item'] !== null ? autolinker.link(String(feature.properties['item']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['planta_cad'] !== null ? autolinker.link(String(feature.properties['planta_cad']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['nome_do_ar'] !== null ? autolinker.link(String(feature.properties['nome_do_ar']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['f6'] !== null ? autolinker.link(String(feature.properties['f6']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['data'] !== null ? autolinker.link(String(feature.properties['data']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ra'] !== null ? autolinker.link(String(feature.properties['ra']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>pal</strong><br />' + (feature.properties['pal'] !== null ? autolinker.link(String(feature.properties['pal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>tipologia</strong><br />' + (feature.properties['tipologia'] !== null ? autolinker.link(String(feature.properties['tipologia']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>nome</strong><br />' + (feature.properties['nome'] !== null ? autolinker.link(String(feature.properties['nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>legislacao</strong><br />' + (feature.properties['legislacao'] !== null ? autolinker.link(String(feature.properties['legislacao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['setor'] !== null ? autolinker.link(String(feature.properties['setor']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['sigla'] !== null ? autolinker.link(String(feature.properties['sigla']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['pavimentos'] !== null ? autolinker.link(String(feature.properties['pavimentos']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tx_ocupaca'] !== null ? autolinker.link(String(feature.properties['tx_ocupaca']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['iat'] !== null ? autolinker.link(String(feature.properties['iat']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['coef_adens'] !== null ? autolinker.link(String(feature.properties['coef_adens']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['afastament'] !== null ? autolinker.link(String(feature.properties['afastament']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape__Are'] !== null ? autolinker.link(String(feature.properties['Shape__Are']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape__Len'] !== null ? autolinker.link(String(feature.properties['Shape__Len']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_AEIS_1_0() {
+            return {
+                pane: 'pane_AEIS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(116,237,151,0.5333333333333333)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_AEIS_1');
+        map.getPane('pane_AEIS_1').style.zIndex = 401;
+        map.getPane('pane_AEIS_1').style['mix-blend-mode'] = 'normal';
+        var layer_AEIS_1 = new L.geoJson(json_AEIS_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_AEIS_1',
+            layerName: 'layer_AEIS_1',
+            pane: 'pane_AEIS_1',
+            onEachFeature: pop_AEIS_1,
+            style: style_AEIS_1_0,
+        });
+        bounds_group.addLayer(layer_AEIS_1);
+        map.addLayer(layer_AEIS_1);
+        function pop_Comunidades_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>id</strong><br />' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Endereco</strong><br />' + (feature.properties['Endereco'] !== null ? autolinker.link(String(feature.properties['Endereco']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Nome</strong><br />' + (feature.properties['Nome'] !== null ? autolinker.link(String(feature.properties['Nome']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>link</strong><br />' + (feature.properties['link'] !== null ? autolinker.link(String(feature.properties['link']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>DP</strong><br />' + (feature.properties['DP'] !== null ? autolinker.link(String(feature.properties['DP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -158,9 +263,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Comunidades_1_0() {
+        function style_Comunidades_2_0() {
             return {
-                pane: 'pane_Comunidades_1',
+                pane: 'pane_Comunidades_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -169,24 +274,24 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(252,8,72,0.5098039215686274)',
+                fillColor: 'rgba(244,133,56,0.5882352941176471)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Comunidades_1');
-        map.getPane('pane_Comunidades_1').style.zIndex = 401;
-        map.getPane('pane_Comunidades_1').style['mix-blend-mode'] = 'normal';
-        var layer_Comunidades_1 = new L.geoJson(json_Comunidades_1, {
+        map.createPane('pane_Comunidades_2');
+        map.getPane('pane_Comunidades_2').style.zIndex = 402;
+        map.getPane('pane_Comunidades_2').style['mix-blend-mode'] = 'normal';
+        var layer_Comunidades_2 = new L.geoJson(json_Comunidades_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Comunidades_1',
-            layerName: 'layer_Comunidades_1',
-            pane: 'pane_Comunidades_1',
-            onEachFeature: pop_Comunidades_1,
-            style: style_Comunidades_1_0,
+            dataVar: 'json_Comunidades_2',
+            layerName: 'layer_Comunidades_2',
+            pane: 'pane_Comunidades_2',
+            onEachFeature: pop_Comunidades_2,
+            style: style_Comunidades_2_0,
         });
-        bounds_group.addLayer(layer_Comunidades_1);
-        map.addLayer(layer_Comunidades_1);
+        bounds_group.addLayer(layer_Comunidades_2);
+        map.addLayer(layer_Comunidades_2);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
@@ -241,7 +346,8 @@
             }
         });
         var overlaysTree = [
-            {label: '<img src="legend/Comunidades_1.png" /> Comunidades', layer: layer_Comunidades_1},
+            {label: '<img src="legend/Comunidades_2.png" /> Comunidades', layer: layer_Comunidades_2},
+            {label: '<img src="legend/AEIS_1.png" /> AEIS', layer: layer_AEIS_1},
             {label: "Google Satellite", layer: layer_GoogleSatellite_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -255,7 +361,7 @@
         lay.addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
-            layer: layer_Comunidades_1,
+            layer: layer_Comunidades_2,
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'id'}));
